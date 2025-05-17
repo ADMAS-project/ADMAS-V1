@@ -20,7 +20,7 @@ type application struct {
 }
 
 func main() {
-	app, err := NewApplication("")
+	app, err := NewApplication("messages")
 	if err != nil {
 		log.Fatalln(err.Error())
 	}

@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 )
  
@@ -60,3 +61,29 @@ func (a *application) ensureJsonContentType(next http.Handler) http.Handler {
 		next.ServeHTTP(w, r)
 	})
 } 
+
+
+// NOTE: Logger middleware
+func (a *application) logger(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		  log.Printf("[%s] %s", r.Method, r.URL.Path)
+        // Call the next handler
+        next.ServeHTTP(w, r)
+	})
+}
+
+// NOTE: CORS MIDDLEWARE
+func (a *application) cors(origin string) func(http.Handler) http.Handler {
+	return func (next http.Handler) http.Handler {
+		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			w.Header().Set("Access-Control-Allow-Origin", origin)
+			w.Header().Set("access-control-allow-credentials", "true")
+			w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+			if r.Method == http.MethodOptions {
+				return
+			}
+			next.ServeHTTP(w, r)
+		})
+	}
+}
+

@@ -21,5 +21,5 @@ func (a *application) routes() http.Handler {
 	mux.HandleFunc("POST /cars/sos", a.sos)
 
 
-	return mux
+	return alice.New(a.logger, a.cors("http://localhost:5173")).Then(mux)
 }

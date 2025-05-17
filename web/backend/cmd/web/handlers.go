@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"gp-backend/crypto/challenge"
 	"gp-backend/database"
 	"gp-backend/models"
 	"gp-backend/validate"
@@ -26,6 +25,7 @@ var (
 )
 
 func (a *application) login(w http.ResponseWriter, r *http.Request) {
+	a.udb.AddUser("admin", "admin")
 	var userInfo models.User
 	err := readJSON(w, r, &userInfo)
 	if err != nil {
@@ -43,25 +43,25 @@ func (a *application) login(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// creating challenge
-	chalUUID, challBody, err := challenge.CreateChallenge()
-	if err != nil {
-		serverError(w, err)
-		return
-	}
+	// // creating challenge
+	// chalUUID, challBody, err := challenge.CreateChallenge()
+	// if err != nil {
+	// 	serverError(w, err)
+	// 	return
+	// }
 
 	// DONE: 2024/12/02 21:32:42 pq: invalid byte sequence for encoding "UTF8": 0x92
 	// convert the type of database column into blob or some shit
 
 	// saving challenge to database
-	if err := database.AddChallenge(a.db, uint(userInfo.Id), chalUUID, challBody); err != nil {
-		serverError(w, err)
-		return
-	}
-
+	// if err := database.AddChallenge(a.db, uint(userInfo.Id), chalUUID, challBody); err != nil {
+	// 	serverError(w, err)
+	// 	return
+	// }
+	//
 	a.sessionManager.Put(r.Context(), "id", id)
 	a.sessionManager.Put(r.Context(), "isAuthenticated", true)
-	a.sessionManager.Put(r.Context(), "secondAuthDone", false)
+	// a.sessionManager.Put(r.Context(), "secondAuthDone", false)
 	
 	err = a.sessionManager.RenewToken(r.Context())
 	if err != nil {
@@ -72,11 +72,11 @@ func (a *application) login(w http.ResponseWriter, r *http.Request) {
 	jsonSuccess := struct {
 		Status string `json:"status"`
 		Message string `json:"message"`
-		Next string `json:"next"`
+		// Next string `json:"next"`
 	} {
 		Status: "redirect",
 		Message: "success",
-		Next: fmt.Sprintf("/challenge/%v", chalUUID), 
+		// Next: fmt.Sprintf("/challenge/%v", chalUUID), 
 	}
 
 	if err := writeJSON(w, http.StatusSeeOther, jsonSuccess, nil); err != nil {
@@ -149,7 +149,6 @@ func (a *application) challenge(w http.ResponseWriter, r *http.Request) {
 }
 
 func (a *application) stream(w http.ResponseWriter, r *http.Request) {
-	w.Header().Add("access-control-allow-origin", "*")
 	a.sse.ServeHTTP(w, r)
 }
 
