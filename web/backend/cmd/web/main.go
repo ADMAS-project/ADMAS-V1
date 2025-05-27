@@ -39,6 +39,11 @@ func main() {
 func OpenDB() (*sql.DB, error) {
 	// TODO: connect through ssl (enable sslmode)
 	db, err := sql.Open("postgres", "host=localhost user=emergency password=emergency dbname=cars sslmode=disable")
+	db.SetMaxOpenConns(20)               // Max total connections
+	db.SetMaxIdleConns(5)                // Max idle connections
+	db.SetConnMaxLifetime(time.Hour)     // Lifetime of each connection
+	db.SetConnMaxIdleTime(30 * time.Minute) // Idle timeout
+
 	if err != nil {
 		return nil, err
 	}
