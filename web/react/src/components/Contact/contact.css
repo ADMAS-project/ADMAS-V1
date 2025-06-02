@@ -1,0 +1,27 @@
+button {
+    text-decoration: none;
+    color: #AA2DC7;
+    background: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover,
+  button:active {
+    color: white;
+    background: linear-gradient(90deg, #0D3B66 0%, #AA2DC7 100%);
+  }
+  
+  
+  
+  @media (min-width: 1100px) {
+    .section{
+        margin-top: 4rem;
+    }  
+
+  }
+  
+
+  
