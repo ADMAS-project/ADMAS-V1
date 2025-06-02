@@ -33,6 +33,10 @@ func (a *application) login(w http.ResponseWriter, r *http.Request) {
 	}
 	id, err := a.udb.Authenticate(userInfo.Username, userInfo.Password)
 	if err != nil {
+		if err.Error() == "sql: no rows in result set" {
+			clientError(w, 403, err)
+			return
+		}
 		serverError(w, err)
 		return
 	}
@@ -206,7 +210,7 @@ func (a *application) sos(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if err := database.AddCar(a.db, data); err != nil {
+	if err := a.udb.AddCar(data); err != nil {
 		serverError(w, err)
 		return
 	}
@@ -236,7 +240,7 @@ func (a *application) viewCar(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	carInfo, err := database.GetCar(a.db, carUUID)
+	carInfo, err := a.udb.GetCar(carUUID)
 	if err != nil {
 		serverError(w, err)
 		return
