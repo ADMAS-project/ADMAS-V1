@@ -15,7 +15,7 @@ func (d UserDB) AddCar(carInfo models.CarInfo) (error) {
 }
 
 // this function gets the cars info from database
-func (d UserDB) GetCar(carUUID string) (*models.CarInfo, error) {
+func (d *UserDB) GetCar(carUUID string) (*models.CarInfo, error) {
 	var carinfo models.CarInfo
 	stmt := `SELECT longitude, latitude, driver_status, color, model FROM cars WHERE uuid=$1`
 	if err := d.DB.QueryRow(stmt, carUUID).Scan(&carinfo.Longitude, &carinfo.Latitude, &carinfo.DriverStatus, &carinfo.Color, &carinfo.Model); err != nil {

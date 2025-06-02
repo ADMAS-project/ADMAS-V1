@@ -3,19 +3,33 @@ package main
 import (
 	"database/sql"
 	"gp-backend/database"
+	"gp-backend/models"
+	"gp-backend/redisdb"
 	"log"
 	"net/http"
+	"os"
 	"time"
+
 	"github.com/alexedwards/scs/postgresstore"
+	"github.com/alexedwards/scs/redisstore"
 	"github.com/alexedwards/scs/v2"
 	_ "github.com/lib/pq"
 	"github.com/r3labs/sse/v2"
+	"github.com/gomodule/redigo/redis"
 )
+
+type UserDB interface {
+	AddCar(models.CarInfo) (error)
+	GetCar(string) (*models.CarInfo, error)
+	AddUser(string, string) error
+	Authenticate(string, string) (int, error)
+	Exists(int) (bool, error)
+}
 
 type application struct {
 	sse *sse.Server
-	db *sql.DB
-	udb database.UserDB
+	db any
+	udb UserDB
 	sessionManager *scs.SessionManager
 }
 
@@ -65,6 +79,7 @@ func OpenDB() (*sql.DB, error) {
 
 
 func NewApplication(sseParameter string) (*application, error) {
+	env := os.Getenv("ENV")
 	if sseParameter == "" {
 		sseParameter = "messages"
 	}
@@ -72,22 +87,48 @@ func NewApplication(sseParameter string) (*application, error) {
 	// Creating the SSE server
 	server := sse.New()
 	server.CreateStream(sseParameter)
+	if env != "TEST" {
+		db, err := OpenDB()
+		if err != nil {
+			return nil, err
+		}
+		udb := &database.UserDB{
+			DB: db,
+		}
 
-	db, err := OpenDB()
-	if err != nil {
-		return nil, err
-	}
-	udb := database.UserDB{
-		DB: db,
+		sessionManager := scs.New()
+		sessionManager.Store = postgresstore.New(db)
+		sessionManager.Lifetime = 12 * time.Hour
+		return &application{
+			sse: server,
+			db: db,
+			udb: udb,
+			sessionManager: sessionManager,
+		}, nil
+
+	} else {
+		db, err := redisdb.OpenDB()
+		if err != nil {
+			return nil, err
+		}
+		udb := redisdb.NewUserDB(db)
+
+		pool := &redis.Pool{
+			MaxIdle: 10,
+			Dial: func() (redis.Conn, error) {
+				return redis.Dial("tcp", "localhost:6379")
+			},
+		}
+		sessionManager := scs.New()
+		sessionManager.Store = redisstore.New(pool)
+		sessionManager.Lifetime = 12 * time.Hour
+		return &application{
+			sse: server,
+			db: db,
+			udb: udb,
+			sessionManager: sessionManager,
+		}, nil
+
 	}
 
-	sessionManager := scs.New()
-	sessionManager.Store = postgresstore.New(db)
-	sessionManager.Lifetime = 12 * time.Hour
-	return &application{
-		sse: server,
-		db: db,
-		udb: udb,
-		sessionManager: sessionManager,
-	}, nil
 }

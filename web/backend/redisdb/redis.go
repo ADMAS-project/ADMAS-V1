@@ -7,10 +7,10 @@ import (
 )
 
 type dbConnector struct {
-	client *redis.Client
+	Client *redis.Client
 }
 
-func OpenDB() (*dbConnector, error) {
+func OpenDB() (*redis.Client, error) {
 	client := redis.NewClient(&redis.Options{
 		Addr:	  "localhost:6379",
 		Password: "", // No password set
@@ -29,8 +29,8 @@ func OpenDB() (*dbConnector, error) {
 	if err != nil {
 		return nil, err
 	}
+	ctx = context.Background()
+	err = client.Set(ctx, "admin", "admin", 0).Err()
 
-	return &dbConnector{
-		client,
-	}, err
+	return client, err
 }

@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"gp-backend/database"
+	// "gp-backend/database"
 	"gp-backend/models"
 	"gp-backend/validate"
 	"log"
@@ -92,67 +92,67 @@ func (a *application) login(w http.ResponseWriter, r *http.Request) {
 	
 }
 
-func (a *application) challenge(w http.ResponseWriter, r *http.Request) {
-	Authenticated := a.sessionManager.GetBool(r.Context(), "isAuthenticated")
-	secondAuthDone := a.sessionManager.GetBool(r.Context(), "secondAuthDone")
-
-	if !Authenticated || secondAuthDone {
-		clientError(w, http.StatusMethodNotAllowed, fmt.Errorf("Not Allowed"))
-		return
-	}
-
-	var chall struct {
-		chalUUID string
-	}
-
-	if err := readJSON(w, r, &chall); err != nil {
-		clientError(w, http.StatusBadRequest, err)
-		return
-	}
-
-	solved, err := database.GetChallengeStatus(a.db, chall.chalUUID)
-	if err != nil {
-		serverError(w, err)
-		return
-	}
-
-	if !solved {
-		clientError(w, http.StatusOK, fmt.Errorf("Challenge not solved"))
-		return
-	}
-
-	if err := a.sessionManager.RenewToken(r.Context()); err != nil {
-		serverError(w, err)
-		return 
-	}
-	a.sessionManager.Put(r.Context(), "secondAuthDone", true)
-	if err := a.sessionManager.RenewToken(r.Context()); err != nil {
-		serverError(w, err)
-		return 
-	}
-
-	jsonSuccess := struct{
-		Status string `json:"status"`
-		Message string `json:"message"`
-		Next string `json:"next"`
-	} {
-		Status: "redirect",
-		Message: "success",
-		Next: "/dashboard",
-	}
-
-	// TODO: CHECK IF YOU WILL LEAVE THE CHALLENGE DELETION AFTER THE BUTTON CLICKING OR AFTER CHALLENGE SOLUTION
-	if err := database.DeleteChallenge(a.db, chall.chalUUID); err != nil {
-		serverError(w, err)
-		return
-	}
-
-	if err := writeJSON(w, http.StatusSeeOther, jsonSuccess, nil); err != nil {
-		serverError(w, err)
-		return
-	}
-
-}
+// func (a *application) challenge(w http.ResponseWriter, r *http.Request) {
+// 	Authenticated := a.sessionManager.GetBool(r.Context(), "isAuthenticated")
+// 	secondAuthDone := a.sessionManager.GetBool(r.Context(), "secondAuthDone")
+//
+// 	if !Authenticated || secondAuthDone {
+// 		clientError(w, http.StatusMethodNotAllowed, fmt.Errorf("Not Allowed"))
+// 		return
+// 	}
+//
+// 	var chall struct {
+// 		chalUUID string
+// 	}
+//
+// 	if err := readJSON(w, r, &chall); err != nil {
+// 		clientError(w, http.StatusBadRequest, err)
+// 		return
+// 	}
+//
+// 	solved, err := database.GetChallengeStatus(a.db, chall.chalUUID)
+// 	if err != nil {
+// 		serverError(w, err)
+// 		return
+// 	}
+//
+// 	if !solved {
+// 		clientError(w, http.StatusOK, fmt.Errorf("Challenge not solved"))
+// 		return
+// 	}
+//
+// 	if err := a.sessionManager.RenewToken(r.Context()); err != nil {
+// 		serverError(w, err)
+// 		return 
+// 	}
+// 	a.sessionManager.Put(r.Context(), "secondAuthDone", true)
+// 	if err := a.sessionManager.RenewToken(r.Context()); err != nil {
+// 		serverError(w, err)
+// 		return 
+// 	}
+//
+// 	jsonSuccess := struct{
+// 		Status string `json:"status"`
+// 		Message string `json:"message"`
+// 		Next string `json:"next"`
+// 	} {
+// 		Status: "redirect",
+// 		Message: "success",
+// 		Next: "/dashboard",
+// 	}
+//
+// 	// TODO: CHECK IF YOU WILL LEAVE THE CHALLENGE DELETION AFTER THE BUTTON CLICKING OR AFTER CHALLENGE SOLUTION
+// 	if err := database.DeleteChallenge(a.db, chall.chalUUID); err != nil {
+// 		serverError(w, err)
+// 		return
+// 	}
+//
+// 	if err := writeJSON(w, http.StatusSeeOther, jsonSuccess, nil); err != nil {
+// 		serverError(w, err)
+// 		return
+// 	}
+//
+// }
 
 func (a *application) stream(w http.ResponseWriter, r *http.Request) {
 	a.sse.ServeHTTP(w, r)
