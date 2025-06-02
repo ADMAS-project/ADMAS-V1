@@ -69,12 +69,14 @@ func (a *application) login(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	token := a.sessionManager.Token(r.Context())
+
 	jsonSuccess := struct {
-		Status string `json:"status"`
+		Token string `json:"token"`
 		Message string `json:"message"`
 		// Next string `json:"next"`
 	} {
-		Status: "redirect",
+		Token: token,
 		Message: "success",
 		// Next: fmt.Sprintf("/challenge/%v", chalUUID), 
 	}

@@ -20,18 +20,24 @@ type application struct {
 }
 
 func main() {
+	defer func() {
+		if err := recover(); err != nil {
+			log.Println("panic occurred:", err)
+		}
+	}()
 	app, err := NewApplication("messages")
 	if err != nil {
 		log.Fatalln(err.Error())
 	}
 
 	server := http.Server{
-		Handler: app.routes(),
+		Handler: app.sessionManager.LoadAndSave(app.routes()),
 		Addr: ":5000",
 	}
 	log.Println("SERVER STARTED")
 	
 	server.ListenAndServe()
+
 
 }
 
