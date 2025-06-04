@@ -51,3 +51,12 @@ func (d *UserDB) Exists(id int) (bool, error) {
 
 	return true, nil
 }
+
+func (d *UserDB) Serve(uuid string) (error) {
+	stmt := `UPDATE cars SET served = t where uuid=$1`
+	_, err := d.DB.Exec(stmt, uuid)
+	if err != nil {
+		return err
+	}
+	return nil
+}
