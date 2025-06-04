@@ -7,4 +7,5 @@ type CarInfo struct {
 	DriverStatus string `json:"driver_status"`
 	Model string `json:"model"`
 	Color string `json:"color"`
+	Served bool 
 }
