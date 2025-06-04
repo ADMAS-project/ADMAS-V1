@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+
 	// "gp-backend/database"
 	"gp-backend/models"
 	"gp-backend/validate"
@@ -249,6 +250,23 @@ func (a *application) viewCar(w http.ResponseWriter, r *http.Request) {
 	carInfo.UUID = carUUID
 
 	if err := writeJSON(w, http.StatusOK, carInfo, nil); err != nil {
+		serverError(w, err)
+		return
+	}
+}
+
+func (a *application) serve(w http.ResponseWriter, r *http.Request) {
+	data := struct{
+		uuid string
+		served bool
+	}{}
+
+	if err := readJSON(w, r, &data); err != nil {
+		clientError(w, http.StatusUnprocessableEntity, err)
+		return
+	}
+
+	if err := a.udb.Serve(data.uuid); err != nil {
 		serverError(w, err)
 		return
 	}

@@ -24,6 +24,7 @@ type UserDB interface {
 	AddUser(string, string) error
 	Authenticate(string, string) (int, error)
 	Exists(int) (bool, error)
+	Serve(string) (error)
 }
 
 type application struct {
