@@ -14,6 +14,7 @@ func (d *UserDB) AddCar(carInfo models.CarInfo) error {
 		"DriverStatus": carInfo.DriverStatus,
 		"Model":        carInfo.Model,
 		"Color":        carInfo.Color,
+		"Served": 		"false",
 	}
 	return d.DB.HSet(d.ctx, carInfo.UUID, carMap).Err()
 }
@@ -46,3 +47,16 @@ func (d *UserDB) GetCar(carUUID string) (*models.CarInfo, error) {
 	return &carInfo, nil
 }
 
+func (d *UserDB) Serve(carUUID string) (error) {
+	val, err := d.DB.HGetAll(d.ctx, carUUID).Result()
+	if err != nil {
+		return err
+	}
+
+	val["served"] = "true"
+	if err := d.DB.HSet(d.ctx, carUUID, val).Err(); err != nil {
+		return err
+	}
+
+	return nil
+}
