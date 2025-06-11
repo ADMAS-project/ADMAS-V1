@@ -1,0 +1,38 @@
+
+  
+  @media (max-width: 768px) {
+    section{
+        margin-top: 1rem;
+    }  
+      .paragragh{
+        margin-top: 0.4rem;
+        padding: 0.5rem;
+    }
+    h2 {
+      font-size:1rem; /* حجم أصغر للشاشات الصغيرة */
+    }
+    ul{
+        margin-bottom: 0.5rem;
+    }
+    ul,li{
+        font-size: 0.6rem;
+    }
+  }
+  
+
+  
+  @media (max-width: 576px) {
+    section{
+        margin-top: 1rem;
+    }  
+      .paragragh{
+        margin-top: 0.4rem;
+    }
+    h2 {
+      font-size:1rem; /* حجم أصغر للشاشات الصغيرة */
+    }
+    ul,li{
+        font-size: 0.80rem;
+    }
+  }
+  

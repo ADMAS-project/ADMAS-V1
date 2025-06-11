@@ -1,0 +1,8 @@
+shape_predictor*
+.env
+build
+install
+log
+resource
+test
+.vscode

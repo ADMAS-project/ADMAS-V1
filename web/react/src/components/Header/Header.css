@@ -1,0 +1,18 @@
+.custom-link {
+    text-decoration: none;
+    color: #000; /* اللون الأساسي */
+    transition: color 0.3s ease; /* تأثير سلس */
+  }
+  
+  .custom-link {
+    text-decoration: none;
+    color: #0D3B66; /* اللون الأساسي */
+    transition: color 0.3s ease;
+  }
+  
+  .custom-link:hover,
+  .custom-link:focus,
+  .custom-link:active {
+    color: #6243b4;
+  }
+  
