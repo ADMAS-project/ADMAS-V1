@@ -1,0 +1,3 @@
+[console_scripts]
+lane_departure_warning = lane_departure_warning.lane_departure_warning:main
+

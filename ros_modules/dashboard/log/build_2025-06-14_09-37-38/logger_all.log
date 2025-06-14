@@ -1,0 +1,91 @@
+[0.415s] [34mcolcon[0m [1;30mDEBUG[0m [32mCommand line arguments: ['/usr/bin/colcon', 'build'][0m
+[0.415s] [34mcolcon[0m [1;30mDEBUG[0m [32mParsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7866f9a44b20>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7866f9a44550>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7866f9a44550>>, mixin_verb=('build',))[0m
+[0.728s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(colcon_meta) check parameters
+[0.728s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) check parameters
+[0.728s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) check parameters
+[0.728s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) check parameters
+[0.728s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(colcon_meta) discover
+[0.728s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) discover
+[0.728s] [34mcolcon.colcon_core.package_discovery[0m [1;30mINFO[0m Crawling recursively for packages in '/home/ros/ros2_ws/src/dashboard'
+[0.728s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.728s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ignore'
+[0.728s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ignore_ament_install'
+[0.728s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['colcon_pkg']
+[0.728s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'colcon_pkg'
+[0.728s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['colcon_meta']
+[0.729s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'colcon_meta'
+[0.729s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['ros']
+[0.729s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ros'
+[0.750s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage '.' with type 'ros.ament_python' and name 'dashboard'[0m
+[0.750s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) using defaults
+[0.750s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) discover
+[0.750s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) using defaults
+[0.750s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) discover
+[0.750s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) using defaults
+[0.779s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) check parameters
+[0.779s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) discover
+[0.784s] [34mcolcon.colcon_installed_package_information.package_discovery[0m [1;30mDEBUG[0m [32mFound 2 installed packages in /home/ros/ros2_ws/install[0m
+[0.785s] [34mcolcon.colcon_installed_package_information.package_discovery[0m [1;30mDEBUG[0m [32mFound 0 installed packages in /home/ros/ros2_ws/src/face_monitor/face_monitor/install[0m
+[0.786s] [34mcolcon.colcon_installed_package_information.package_discovery[0m [1;30mDEBUG[0m [32mFound 275 installed packages in /opt/ros/humble[0m
+[0.787s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) using defaults
+[0.825s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dashboard' build argument 'cmake_args' from command line to 'None'
+[0.825s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dashboard' build argument 'cmake_target' from command line to 'None'
+[0.825s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dashboard' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.825s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dashboard' build argument 'cmake_clean_cache' from command line to 'False'
+[0.825s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dashboard' build argument 'cmake_clean_first' from command line to 'False'
+[0.825s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dashboard' build argument 'cmake_force_configure' from command line to 'False'
+[0.825s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dashboard' build argument 'ament_cmake_args' from command line to 'None'
+[0.825s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dashboard' build argument 'catkin_cmake_args' from command line to 'None'
+[0.825s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dashboard' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.825s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'dashboard' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ros/ros2_ws/src/dashboard/build/dashboard', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ros/ros2_ws/src/dashboard/install/dashboard', 'merge_install': False, 'path': '/home/ros/ros2_ws/src/dashboard', 'symlink_install': False, 'test_result_base': None}[0m
+[0.825s] [34mcolcon.colcon_core.executor[0m [1;30mINFO[0m Executing jobs using 'parallel' executor
+[0.826s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mrun_until_complete[0m
+[0.826s] [34mcolcon.colcon_ros.task.ament_python.build[0m [1;30mINFO[0m Building ROS package in '/home/ros/ros2_ws/src/dashboard' with build type 'ament_python'
+[0.826s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('dashboard', 'ament_prefix_path')
+[0.835s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.835s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/ros/ros2_ws/src/dashboard/install/dashboard/share/dashboard/hook/ament_prefix_path.ps1'
+[0.837s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/ros/ros2_ws/src/dashboard/install/dashboard/share/dashboard/hook/ament_prefix_path.dsv'
+[0.838s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/ros/ros2_ws/src/dashboard/install/dashboard/share/dashboard/hook/ament_prefix_path.sh'
+[0.839s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.839s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[1.116s] [34mcolcon.colcon_core.task.python.build[0m [1;30mINFO[0m Building Python package in '/home/ros/ros2_ws/src/dashboard'
+[1.116s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.116s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[1.522s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/ros/ros2_ws/src/dashboard': PYTHONPATH=/home/ros/ros2_ws/src/dashboard/build/dashboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ros/ros2_ws/src/dashboard/install/dashboard/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/dashboard build --build-base /home/ros/ros2_ws/src/dashboard/build/dashboard/build install --record /home/ros/ros2_ws/src/dashboard/build/dashboard/install.log --single-version-externally-managed install_data[0m
+[1.801s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/ros/ros2_ws/src/dashboard' returned '0': PYTHONPATH=/home/ros/ros2_ws/src/dashboard/build/dashboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ros/ros2_ws/src/dashboard/install/dashboard/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/dashboard build --build-base /home/ros/ros2_ws/src/dashboard/build/dashboard/build install --record /home/ros/ros2_ws/src/dashboard/build/dashboard/install.log --single-version-externally-managed install_data[0m
+[1.814s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/ros/ros2_ws/src/dashboard/install/dashboard' for CMake module files
+[1.814s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/ros/ros2_ws/src/dashboard/install/dashboard' for CMake config files
+[1.815s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/ros/ros2_ws/src/dashboard/install/dashboard/lib'
+[1.815s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/ros/ros2_ws/src/dashboard/install/dashboard/bin'
+[1.815s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/ros/ros2_ws/src/dashboard/install/dashboard/lib/pkgconfig/dashboard.pc'
+[1.815s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/ros/ros2_ws/src/dashboard/install/dashboard/lib/python3.10/site-packages'
+[1.815s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('dashboard', 'pythonpath')
+[1.815s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/ros/ros2_ws/src/dashboard/install/dashboard/share/dashboard/hook/pythonpath.ps1'
+[1.816s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/ros/ros2_ws/src/dashboard/install/dashboard/share/dashboard/hook/pythonpath.dsv'
+[1.816s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/ros/ros2_ws/src/dashboard/install/dashboard/share/dashboard/hook/pythonpath.sh'
+[1.817s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/ros/ros2_ws/src/dashboard/install/dashboard/bin'
+[1.817s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(dashboard)
+[1.817s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/ros/ros2_ws/src/dashboard/install/dashboard/share/dashboard/package.ps1'
+[1.818s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/ros/ros2_ws/src/dashboard/install/dashboard/share/dashboard/package.dsv'
+[1.819s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/ros/ros2_ws/src/dashboard/install/dashboard/share/dashboard/package.sh'
+[1.821s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/ros/ros2_ws/src/dashboard/install/dashboard/share/dashboard/package.bash'
+[1.823s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/ros/ros2_ws/src/dashboard/install/dashboard/share/dashboard/package.zsh'
+[1.824s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/ros/ros2_ws/src/dashboard/install/dashboard/share/colcon-core/packages/dashboard)
+[1.824s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mclosing loop[0m
+[1.825s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mloop closed[0m
+[1.825s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mrun_until_complete finished with '0'[0m
+[1.825s] [34mcolcon.colcon_core.event_reactor[0m [1;30mDEBUG[0m [32mjoining thread[0m
+[1.834s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.834s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.834s] [34mcolcon.colcon_notification.desktop_notification[0m [1;30mINFO[0m Sending desktop notification using 'notify2'
+[1.852s] [34mcolcon.colcon_core.event_reactor[0m [1;30mDEBUG[0m [32mjoined thread[0m
+[1.852s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/ros/ros2_ws/src/dashboard/install/local_setup.ps1'
+[1.854s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix util module '/home/ros/ros2_ws/src/dashboard/install/_local_setup_util_ps1.py'
+[1.856s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/ros/ros2_ws/src/dashboard/install/setup.ps1'
+[1.857s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/ros/ros2_ws/src/dashboard/install/local_setup.sh'
+[1.858s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix util module '/home/ros/ros2_ws/src/dashboard/install/_local_setup_util_sh.py'
+[1.859s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/ros/ros2_ws/src/dashboard/install/setup.sh'
+[1.860s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/ros/ros2_ws/src/dashboard/install/local_setup.bash'
+[1.861s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/ros/ros2_ws/src/dashboard/install/setup.bash'
+[1.863s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/ros/ros2_ws/src/dashboard/install/local_setup.zsh'
+[1.864s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/ros/ros2_ws/src/dashboard/install/setup.zsh'

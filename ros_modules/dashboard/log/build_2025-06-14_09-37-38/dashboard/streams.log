@@ -1,0 +1,41 @@
+[0.696s] Invoking command in '/home/ros/ros2_ws/src/dashboard': PYTHONPATH=/home/ros/ros2_ws/src/dashboard/build/dashboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ros/ros2_ws/src/dashboard/install/dashboard/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/dashboard build --build-base /home/ros/ros2_ws/src/dashboard/build/dashboard/build install --record /home/ros/ros2_ws/src/dashboard/build/dashboard/install.log --single-version-externally-managed install_data
+[0.926s] running egg_info
+[0.926s] creating build/dashboard/dashboard.egg-info
+[0.927s] writing build/dashboard/dashboard.egg-info/PKG-INFO
+[0.927s] writing dependency_links to build/dashboard/dashboard.egg-info/dependency_links.txt
+[0.927s] writing entry points to build/dashboard/dashboard.egg-info/entry_points.txt
+[0.927s] writing requirements to build/dashboard/dashboard.egg-info/requires.txt
+[0.927s] writing top-level names to build/dashboard/dashboard.egg-info/top_level.txt
+[0.927s] writing manifest file 'build/dashboard/dashboard.egg-info/SOURCES.txt'
+[0.931s] reading manifest file 'build/dashboard/dashboard.egg-info/SOURCES.txt'
+[0.931s] writing manifest file 'build/dashboard/dashboard.egg-info/SOURCES.txt'
+[0.931s] running build
+[0.931s] running build_py
+[0.931s] creating /home/ros/ros2_ws/src/dashboard/build/dashboard/build
+[0.931s] creating /home/ros/ros2_ws/src/dashboard/build/dashboard/build/lib
+[0.931s] creating /home/ros/ros2_ws/src/dashboard/build/dashboard/build/lib/dashboard
+[0.931s] copying dashboard/__init__.py -> /home/ros/ros2_ws/src/dashboard/build/dashboard/build/lib/dashboard
+[0.931s] copying dashboard/dashboard.py -> /home/ros/ros2_ws/src/dashboard/build/dashboard/build/lib/dashboard
+[0.931s] copying dashboard/traffic_sign.py -> /home/ros/ros2_ws/src/dashboard/build/dashboard/build/lib/dashboard
+[0.931s] running install
+[0.931s] running install_lib
+[0.934s] creating /home/ros/ros2_ws/src/dashboard/install/dashboard/lib/python3.10/site-packages/dashboard
+[0.934s] copying /home/ros/ros2_ws/src/dashboard/build/dashboard/build/lib/dashboard/__init__.py -> /home/ros/ros2_ws/src/dashboard/install/dashboard/lib/python3.10/site-packages/dashboard
+[0.934s] copying /home/ros/ros2_ws/src/dashboard/build/dashboard/build/lib/dashboard/dashboard.py -> /home/ros/ros2_ws/src/dashboard/install/dashboard/lib/python3.10/site-packages/dashboard
+[0.934s] copying /home/ros/ros2_ws/src/dashboard/build/dashboard/build/lib/dashboard/traffic_sign.py -> /home/ros/ros2_ws/src/dashboard/install/dashboard/lib/python3.10/site-packages/dashboard
+[0.934s] byte-compiling /home/ros/ros2_ws/src/dashboard/install/dashboard/lib/python3.10/site-packages/dashboard/__init__.py to __init__.cpython-310.pyc
+[0.934s] byte-compiling /home/ros/ros2_ws/src/dashboard/install/dashboard/lib/python3.10/site-packages/dashboard/dashboard.py to dashboard.cpython-310.pyc
+[0.934s] byte-compiling /home/ros/ros2_ws/src/dashboard/install/dashboard/lib/python3.10/site-packages/dashboard/traffic_sign.py to traffic_sign.cpython-310.pyc
+[0.935s] running install_data
+[0.935s] creating /home/ros/ros2_ws/src/dashboard/install/dashboard/share/ament_index
+[0.935s] creating /home/ros/ros2_ws/src/dashboard/install/dashboard/share/ament_index/resource_index
+[0.935s] creating /home/ros/ros2_ws/src/dashboard/install/dashboard/share/ament_index/resource_index/packages
+[0.935s] copying resource/dashboard -> /home/ros/ros2_ws/src/dashboard/install/dashboard/share/ament_index/resource_index/packages
+[0.935s] copying package.xml -> /home/ros/ros2_ws/src/dashboard/install/dashboard/share/dashboard
+[0.938s] running install_egg_info
+[0.938s] Copying build/dashboard/dashboard.egg-info to /home/ros/ros2_ws/src/dashboard/install/dashboard/lib/python3.10/site-packages/dashboard-0.1.0-py3.10.egg-info
+[0.938s] running install_scripts
+[0.958s] Installing dashboard script to /home/ros/ros2_ws/src/dashboard/install/dashboard/lib/dashboard
+[0.958s] Installing traffic_sign script to /home/ros/ros2_ws/src/dashboard/install/dashboard/lib/dashboard
+[0.958s] writing list of installed files to '/home/ros/ros2_ws/src/dashboard/build/dashboard/install.log'
+[0.975s] Invoked command in '/home/ros/ros2_ws/src/dashboard' returned '0': PYTHONPATH=/home/ros/ros2_ws/src/dashboard/build/dashboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ros/ros2_ws/src/dashboard/install/dashboard/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/dashboard build --build-base /home/ros/ros2_ws/src/dashboard/build/dashboard/build install --record /home/ros/ros2_ws/src/dashboard/build/dashboard/install.log --single-version-externally-managed install_data

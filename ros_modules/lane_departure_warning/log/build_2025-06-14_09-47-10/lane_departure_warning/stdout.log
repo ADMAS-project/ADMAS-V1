@@ -1,0 +1,38 @@
+running egg_info
+creating build/lane_departure_warning/lane_departure_warning.egg-info
+writing build/lane_departure_warning/lane_departure_warning.egg-info/PKG-INFO
+writing dependency_links to build/lane_departure_warning/lane_departure_warning.egg-info/dependency_links.txt
+writing entry points to build/lane_departure_warning/lane_departure_warning.egg-info/entry_points.txt
+writing requirements to build/lane_departure_warning/lane_departure_warning.egg-info/requires.txt
+writing top-level names to build/lane_departure_warning/lane_departure_warning.egg-info/top_level.txt
+writing manifest file 'build/lane_departure_warning/lane_departure_warning.egg-info/SOURCES.txt'
+reading manifest file 'build/lane_departure_warning/lane_departure_warning.egg-info/SOURCES.txt'
+writing manifest file 'build/lane_departure_warning/lane_departure_warning.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/ros/ros2_ws/src/lane_departure_warning/build/lane_departure_warning/build
+creating /home/ros/ros2_ws/src/lane_departure_warning/build/lane_departure_warning/build/lib
+creating /home/ros/ros2_ws/src/lane_departure_warning/build/lane_departure_warning/build/lib/lane_departure_warning
+copying lane_departure_warning/lane_departure_warning_node.py -> /home/ros/ros2_ws/src/lane_departure_warning/build/lane_departure_warning/build/lib/lane_departure_warning
+copying lane_departure_warning/simulation.py -> /home/ros/ros2_ws/src/lane_departure_warning/build/lane_departure_warning/build/lib/lane_departure_warning
+copying lane_departure_warning/__init__.py -> /home/ros/ros2_ws/src/lane_departure_warning/build/lane_departure_warning/build/lib/lane_departure_warning
+running install
+running install_lib
+creating /home/ros/ros2_ws/src/lane_departure_warning/install/lane_departure_warning/lib/python3.10/site-packages/lane_departure_warning
+copying /home/ros/ros2_ws/src/lane_departure_warning/build/lane_departure_warning/build/lib/lane_departure_warning/lane_departure_warning_node.py -> /home/ros/ros2_ws/src/lane_departure_warning/install/lane_departure_warning/lib/python3.10/site-packages/lane_departure_warning
+copying /home/ros/ros2_ws/src/lane_departure_warning/build/lane_departure_warning/build/lib/lane_departure_warning/simulation.py -> /home/ros/ros2_ws/src/lane_departure_warning/install/lane_departure_warning/lib/python3.10/site-packages/lane_departure_warning
+copying /home/ros/ros2_ws/src/lane_departure_warning/build/lane_departure_warning/build/lib/lane_departure_warning/__init__.py -> /home/ros/ros2_ws/src/lane_departure_warning/install/lane_departure_warning/lib/python3.10/site-packages/lane_departure_warning
+byte-compiling /home/ros/ros2_ws/src/lane_departure_warning/install/lane_departure_warning/lib/python3.10/site-packages/lane_departure_warning/lane_departure_warning_node.py to lane_departure_warning_node.cpython-310.pyc
+byte-compiling /home/ros/ros2_ws/src/lane_departure_warning/install/lane_departure_warning/lib/python3.10/site-packages/lane_departure_warning/simulation.py to simulation.cpython-310.pyc
+byte-compiling /home/ros/ros2_ws/src/lane_departure_warning/install/lane_departure_warning/lib/python3.10/site-packages/lane_departure_warning/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/ros/ros2_ws/src/lane_departure_warning/install/lane_departure_warning/share/ament_index
+creating /home/ros/ros2_ws/src/lane_departure_warning/install/lane_departure_warning/share/ament_index/resource_index
+creating /home/ros/ros2_ws/src/lane_departure_warning/install/lane_departure_warning/share/ament_index/resource_index/packages
+copying resource/lane_departure_warning -> /home/ros/ros2_ws/src/lane_departure_warning/install/lane_departure_warning/share/ament_index/resource_index/packages
+copying package.xml -> /home/ros/ros2_ws/src/lane_departure_warning/install/lane_departure_warning/share/lane_departure_warning
+running install_egg_info
+Copying build/lane_departure_warning/lane_departure_warning.egg-info to /home/ros/ros2_ws/src/lane_departure_warning/install/lane_departure_warning/lib/python3.10/site-packages/lane_departure_warning-0.1.0-py3.10.egg-info
+running install_scripts
+Installing lane_departure_warning script to /home/ros/ros2_ws/src/lane_departure_warning/install/lane_departure_warning/lib/lane_departure_warning
+writing list of installed files to '/home/ros/ros2_ws/src/lane_departure_warning/build/lane_departure_warning/install.log'

@@ -1,0 +1,4 @@
+[console_scripts]
+dashboard = dashboard.dashboard:main
+traffic_sign = dashboard.traffic_sign:main
+

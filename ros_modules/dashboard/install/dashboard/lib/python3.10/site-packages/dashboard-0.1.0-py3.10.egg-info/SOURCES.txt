@@ -1,0 +1,17 @@
+package.xml
+setup.cfg
+setup.py
+build/dashboard/dashboard.egg-info/PKG-INFO
+build/dashboard/dashboard.egg-info/SOURCES.txt
+build/dashboard/dashboard.egg-info/dependency_links.txt
+build/dashboard/dashboard.egg-info/entry_points.txt
+build/dashboard/dashboard.egg-info/requires.txt
+build/dashboard/dashboard.egg-info/top_level.txt
+build/dashboard/dashboard.egg-info/zip-safe
+dashboard/__init__.py
+dashboard/dashboard.py
+dashboard/traffic_sign.py
+resource/dashboard
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py
