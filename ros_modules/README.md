@@ -1,12 +1,3 @@
-
-     ___       _______  .___  ___.      ___           _______.
-    /   \     |       \ |   \/   |     /   \         /       |
-   /  ^  \    |  .--.  ||  \  /  |    /  ^  \       |   (----`
-  /  /_\  \   |  |  |  ||  |\/|  |   /  /_\  \       \   \    
- /  _____  \  |  '--'  ||  |  |  |  /  _____  \  .----)   |   
-/__/     \__\ |_______/ |__|  |__| /__/     \__\ |_______/    
-                                                              
-
 # ADMAS ROS 2 System – Communication and Architecture
 
 This is the ROS 2 workspace for the **Advanced Driver Monitoring and Assistance System (ADMAS)**.  
