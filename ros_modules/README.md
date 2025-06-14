@@ -29,7 +29,7 @@ It consists of multiple interconnected nodes handling monitoring, detection, com
 
 **Lane Detection**
 
-**Topic:** ( `/lane_status`)
+**Topic:** ( `/lane_warning`)
 
 **Subscribed by:**
 
@@ -37,7 +37,7 @@ It consists of multiple interconnected nodes handling monitoring, detection, com
 
 **Traffic Sign Detection**
 
-**Topic:** ( `/traffic_signs`)
+**Topic:** ( `/road_sign_topic`)
 
 **Subscribed by:**
 
@@ -76,11 +76,11 @@ source install/setup.bash
 
 ##  Topics Summary
 
-| Topic            | Publisher                | Subscribers                                       |
-| ---------------- | ------------------------ | ------------------------------------------------- |
-| `/face_monitor`  | `face_monitor.py`        | `communication`, `emergency_parking`, `dashboard` |
-| `/lane_status`   | `lane_departure_node.py` | `dashboard`                                       |
-| `/traffic_signs` | `traffic_signs_node.py`  | `dashboard`                                       |
+| Topic              | Publisher                | Subscribers                                       |
+| -------------------| ------------------------ | ------------------------------------------------- |
+| `/face_monitor`    | `face_monitor.py`        | `communication`, `emergency_parking`, `dashboard` |
+| `/lane_warning`    | `lane_departure_node.py` | `dashboard`                                       |
+| `/road_sign_topic` | `traffic_signs_node.py`  | `dashboard`                                       |
 
 ---
 
