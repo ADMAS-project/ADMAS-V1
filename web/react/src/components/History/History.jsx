@@ -7,6 +7,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import "./Map.css";
 import { useMap } from "react-leaflet";
+import { DoneButton } from "../DoneButton/DoneButton";
 
 
 const customIcon = new L.Icon({
@@ -134,6 +135,7 @@ const CarItem = ({ car, isLast, onSelectCar }) => {
                     }}
                     aria-label="Car status button"
                 />
+            <DoneButton carUUID={car.uuid}></DoneButton>
             </div>
             <hr className="mt-3 border-dark" />
         </article>

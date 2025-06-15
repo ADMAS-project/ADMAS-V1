@@ -270,4 +270,5 @@ func (a *application) serve(w http.ResponseWriter, r *http.Request) {
 		serverError(w, err)
 		return
 	}
+	writeJSON(w, http.StatusOK, map[string]string{"served": "true"}, nil)
 }
