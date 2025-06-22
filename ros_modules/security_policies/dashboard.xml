@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<policy version="0.2.0"
+  xmlns="http://ros2.org/sros2/policy"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="security_policy.xsd">
+  <enclaves>
+    <enclave path="/dashboard">
+      <profiles>
+        <profile ns="/" node="dashboard">
+          <topics publish="DENY" subscribe="ALLOW">
+            <topic>/lane_warning</topic>
+            <topic>/face_monitor</topic>
+            <topic>/road_sign_topic</topic>
+          </topics>
+        </profile>
+      </profiles>
+    </enclave>
+  </enclaves>
+</policy>

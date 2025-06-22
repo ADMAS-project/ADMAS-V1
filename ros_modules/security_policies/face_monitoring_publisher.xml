@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<policy version="0.2.0"
+        xmlns="http://ros2.org/sros2/policy"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="security_policy.xsd">
+  <enclaves>
+    <enclave path="/face_monitoring_publisher">
+      <profiles>
+        <profile ns="/" node="publisher_node">
+          <topics publish="ALLOW" subscribe="DENY">
+            <topic>/face_monitor</topic>
+          </topics>
+        </profile>
+      </profiles>
+    </enclave>
+  </enclaves>
+</policy>

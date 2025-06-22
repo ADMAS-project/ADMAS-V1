@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xml="http://www.w3.org/XML/1998/namespace"
+  targetNamespace="http://ros2.org/sros2/policy"
+  xmlns="http://ros2.org/sros2/policy"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+
+  <xs:element name="policy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="enclaves" type="Enclaves"/>
+      </xs:sequence>
+      <xs:attribute name="version" type="xs:string" use="required" fixed="0.2.0"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="Enclaves">
+    <xs:sequence>
+      <xs:element name="enclave" type="Enclave" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Enclave">
+    <xs:sequence>
+      <xs:element name="profiles" type="Profiles"/>
+    </xs:sequence>
+    <xs:attribute name="path" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="Profiles">
+    <xs:sequence>
+      <xs:element name="profile" type="Profile" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Profile">
+    <xs:sequence>
+      <xs:element name="topics" type="TopicExpressionList" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="ns" type="xs:string" use="required"/>
+    <xs:attribute name="node" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="TopicExpressionList">
+    <xs:sequence>
+      <xs:element name="topic" type="xs:string" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="publish" use="optional">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ALLOW"/>
+          <xs:enumeration value="DENY"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="subscribe" use="optional">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ALLOW"/>
+          <xs:enumeration value="DENY"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+
+</xs:schema>
