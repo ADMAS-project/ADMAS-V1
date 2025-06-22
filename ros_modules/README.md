@@ -109,6 +109,5 @@ ros_modules/
 ##  License
 
 MIT License
-© 2025 ADMAS Graduation Team
-
+© 2025 ADMAS SCU Graduation Team
 
