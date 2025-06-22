@@ -7,7 +7,7 @@
     <enclave path="/lane_departure_warning">
       <profiles>
         <profile ns="/" node="lane_departure">
-          <topics publish="DENY" subscribe="ALLOW">
+          <topics publish="ALLOW" subscribe="DENY">
             <topic>/lane_warning</topic>
           </topics>
         </profile>

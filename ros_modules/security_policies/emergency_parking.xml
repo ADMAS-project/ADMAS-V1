@@ -8,7 +8,7 @@
       <profiles>
         <profile ns="/" node="emergency_parking_node">
           <topics publish="DENY" subscribe="ALLOW">
-            <topic>/emergency_signal</topic>
+            <topic>/face_monitor</topic>
           </topics>
         </profile>
       </profiles>
