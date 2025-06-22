@@ -47,17 +47,13 @@ ros2 security create_permission ../sros2_keystore /traffic_sign_detection traffi
 
 ---
 
-## Pro Tips
+## Tips
 
 * Use `--ros-args --enclave /node_name` or set `ROS_SECURITY_ENCLAVE` to load policies correctly.
-* Add `ROS_SECURITY_ENABLE=true` and `ROS_SECURITY_STRATEGY=Enforce` to your launch setup or `.bashrc`.
+
 
 ---
 
 ##  Maintained by
-╭────────────────────────────────────────────╮
-│                                            │
-│       Ahmad Alaa (**@0xAhmadAlaa**)        │
-│                                            │
-╰────────────────────────────────────────────╯
 
+**@0xAhmadAlaa**
