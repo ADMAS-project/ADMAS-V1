@@ -2,7 +2,7 @@
 
 > Graduation Project | SCU 2025  
 > A real-time, AI-powered vehicle safety system that **detects fatigue**, **autonomously responds**, and **connects emergency services**.  
- 
+
 ---
 
 ## Project Overview
@@ -33,7 +33,7 @@ graduation-project/
 │   ├── README.md                  # full ROS2 breakdown
 │   └── security_policies/         #  [Detailed security README inside]
 ├── web/                   # Web emergency app
-│   ├── backend/ (Go)              # Token auth, Redis, REST API
+│   ├── backend/ (Go)              # Token auth, Datastorage management, REST API
 │   ├── react/ (Frontend)         # Live responder dashboard
 │   └── frontend/ (Vue)           # Early dashboard attempt (optional now)
 ├── firmware/              #  ESP32 for v2v in the other car
@@ -73,7 +73,7 @@ graduation-project/
 
 Real-time emergency response platform built with:
 
-*  **Go** backend: Auth + Redis + RESTful APIs
+*  **Go** backend: Auth + Data Storage system (PostgreSQL or Redis) + RESTful API + SSE stream
 *  **React** frontend: Live map, emergency resolution UI
 *  Real-time updates via WebSockets
 *  Full GPS distress flow
